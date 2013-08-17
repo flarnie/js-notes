@@ -4,9 +4,10 @@ js-notes
 ##Ruby to JavaScript
 
 Here are some key differences between our beloved Ruby and it's best friend, JavaScript.
-(Note: There are more similarities than differences!  
+\(Note: There are more similarities than differences!  
 For example, they deal with scope in very similar ways.  
-The 'Scope of variables' concept noted in this table is one of the only differences.
+The 'Scope of variables' concept noted in this table is one of the only differences.\)
+
 | Concepts   | in Ruby  | in JavaScript |
 | ---------- | -------- | ------------- |
 | Is everything an object? |  you have Strings, Numbers, booleans, etc., and **they are all objects**        | strings, numbers, booleans, 'undefined' and 'null' **are primitives**, not objects |
@@ -14,10 +15,10 @@ The 'Scope of variables' concept noted in this table is one of the only differen
 | Functions/Methods | Methods | Functions |
 | Local vs. Global Variables | Globals require special '$' sign  | Globals happen when you forget 'var' |
 | Referencing current instance | 'self' is current instance anywhere within the class and it's methods | 'this' refers to the thing that the method was called on. |
-<!---| Type comparisons | "5" == 5 returns false | "5" == 5 returns true BUT "5" !== 5 also returns true.  To strictly compare try "5" === 5 |
+| Type comparisons | "5" == 5 returns false | "5" == 5 returns true BUT "5" !== 5 also returns true.  To strictly compare try "5" === 5 |
 | Implicit return? | Without a 'return' statement, a function will return the last value listed. | Without 'return statement, a function will return 'undefined'. |
 | Scope of variables | Referencing a variable that is not defined inside the method will raise an error. | You may use variables defined outside of a function without passing them in as arguments. \(a.k.a. [Lexical Scoping](http://eloquentjavascript.net/chapter3.html#p71c5c4c9)\) |
---->
+
 ###Syntax for similar operations:
 
 ####String Slicing
