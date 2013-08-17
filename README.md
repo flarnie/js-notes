@@ -4,8 +4,8 @@ js-notes
 ##Ruby to JavaScript
 
 Here are some key differences between our beloved Ruby and it's best friend, JavaScript.
-\(Note: There are more similarities than differences!  
-For example, they deal with scope in very similar ways.  
+
+\(Note: There are more similarities than differences!  For example, they deal with scope in very similar ways.  
 The 'Scope of variables' concept noted in this table is one of the only differences.\)
 
 | Concepts   | in Ruby  | in JavaScript |
@@ -18,6 +18,10 @@ The 'Scope of variables' concept noted in this table is one of the only differen
 | Type comparisons | "5" == 5 returns false | "5" == 5 returns true BUT "5" !== 5 also returns true.  To strictly compare try "5" === 5 |
 | Implicit return? | Without a 'return' statement, a function will return the last value listed. | Without 'return statement, a function will return 'undefined'. |
 | Scope of variables | Referencing a variable that is not defined inside the method will raise an error. | You may use variables defined outside of a function without passing them in as arguments. \(a.k.a. [Lexical Scoping](http://eloquentjavascript.net/chapter3.html#p71c5c4c9)\) |
+| Wrong number of Arguments | Raises an ArgumentError | Silently ignores extra arguments or gives missing arguments the value 'undefined', arguments can also be access with 'arguments' keyword. |
+| Hashes | You call this a 'hash' in ruby. | Variables of type 'Object'. |
+| String Interpolation | Easy string interpolation | [No string interpolation](http://stackoverflow.com/questions/4743137/anything-similar-in-javascript-to-rubys-value-string-interpolation)- you must concatenate. |
+
 
 ###Syntax for similar operations:
 
@@ -119,6 +123,46 @@ In JavaScript:
     var n = 5;
     n.toString();
     //becomes the string "5"
+
+####Push value to an array
+
+In Ruby:
+
+    [] << "something"
+    
+    #OR
+    
+    [].push("something")
+    
+In JavaScript:
+
+    var arr = [];
+    arr.push("something");
+    // no "shovel" operator : (
+
+####Default values for arguments
+
+In Ruby:
+
+    def add_n_or_1(x, n = 1)
+      x + n
+    end
+    
+In JavaScript:
+
+    //you must specifically check that it is undefined
+    function add_n_or_1(x, n) {
+      n = typeof n != 'undefined' ? n : 1;
+      return x + n;
+    };
+    
+    //OR in some cases this works
+    function add_n_or_1(x, n) {
+      if (arguments.length == 1)
+        n = 1;
+      return x + n;
+    };
+
 
 
 ####Print statements for debugging
