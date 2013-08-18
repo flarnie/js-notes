@@ -17,11 +17,11 @@ The 'Scope of variables' concept noted in this table is one of the only differen
 | Referencing current instance | 'self' is current instance anywhere within the class and it's methods | 'this' refers to the thing that the method was called on. |
 | Type comparisons | "5" == 5 returns false | "5" == 5 returns true BUT "5" !== 5 also returns true.  To strictly compare try "5" === 5 |
 | Implicit return? | Without a 'return' statement, a function will return the last value listed. | Without 'return statement, a function will return 'undefined'. |
-| Scope of variables | Referencing a variable that is not defined inside the method will raise an error. | You may use variables defined outside of a function without passing them in as arguments. \(a.k.a. [Lexical Scoping](http://eloquentjavascript.net/chapter3.html#p71c5c4c9)\) |
+| Scope of variables | Referencing a variable that is not defined inside the method (or it's containing method) will raise an error. | You may use variables defined in the global scope, (outside of the function and it's containing function),without passing them in as arguments. \(a.k.a. [Lexical Scoping](http://eloquentjavascript.net/chapter3.html#p71c5c4c9)\) |
 | Wrong number of Arguments | Raises an ArgumentError | Silently ignores extra arguments or gives missing arguments the value 'undefined', arguments can also be access with 'arguments' keyword. |
-| Hashes | You call this a 'hash' in ruby. | Variables of type 'Object'. |
+| Storing key/value pairs | You call this a 'hash' in ruby. | 'Object' type variables do this in JS.  Even better, [build your own dictionary type constructor](http://eloquentjavascript.net/chapter8.html#p449c3b0d). |
 | String Interpolation | Easy string interpolation | [No string interpolation](http://stackoverflow.com/questions/4743137/anything-similar-in-javascript-to-rubys-value-string-interpolation)- you must concatenate. |
-
+| Conventions for Naming/Capitalization | Classes are CamelCase, and most other things are snake_case | Most everything is camelCase, and constructors are Capitalized  |
 
 ###Syntax for similar operations:
 
@@ -192,4 +192,5 @@ In this book, I won't leave out any semicolons, and I strongly urge you to do th
 
 ###Cool Stuff to Think About
 
--JavaScript has metaprogramming too!  Check out [the factory method in this example](http://eloquentjavascript.net/chapter3.html#p2eb13e2b).
+ * JavaScript has metaprogramming too!  Check out [the factory method in this example](http://eloquentjavascript.net/chapter3.html#p2eb13e2b).
+ * JavaScript style conventions are listed in [this guide by Douglas Crockford](http://javascript.crockford.com/code.html).
