@@ -12,10 +12,9 @@ The 'Scope of variables' concept noted in this table is one of the only differen
 | ---------- | -------- | ------------- |
 | Is everything an object? |  you have Strings, Numbers, booleans, etc., and **they are all objects**        | strings, numbers, booleans, 'undefined' and 'null' **are primitives**, not objects |
 | Truthy and Falsy | Only 'nil' and 'false' are falsy | 'undefined', 'null', 'NaN' ("not a number"), 0, and '' are **all falsy values** in JS |
-| Functions/Methods | Methods | Functions |
 | Local vs. Global Variables | Globals require special '$' sign  | Globals happen when you forget 'var' |
 | Referencing current instance | 'self' is current instance anywhere within the class and it's methods | 'this' refers to the thing that the method was called on. |
-| Type comparisons | "5" == 5 returns false | "5" == 5 returns true BUT "5" !== 5 also returns true.  To strictly compare try "5" === 5 |
+| Type comparisons | "5" == 5 returns false | "5" == 5 returns true .. to "strictly compare" try "5" === 5 (returns false) or "5" !== 5 (returns true) |
 | Implicit return? | Without a 'return' statement, a function will return the last value listed. | Without 'return statement, a function will return 'undefined'. |
 | Scope of variables | Referencing a variable that is not defined inside the method (or it's containing method) will raise an error. | You may use variables defined in the global scope, (outside of the function and it's containing function),without passing them in as arguments. \(a.k.a. [Lexical Scoping](http://eloquentjavascript.net/chapter3.html#p71c5c4c9)\) |
 | Wrong number of Arguments | Raises an ArgumentError | Silently ignores extra arguments or gives missing arguments the value 'undefined', arguments can also be access with 'arguments' keyword. |
@@ -97,12 +96,12 @@ In Ruby:
     
 In JavaScript:
 
-    if (2 + 2 == 4)
-      var result = "Sane world.";
-    else if (2 + 2 == 5)
-      var result = "Very large values of 2.";
-    else
-      result = "Not sane world.";
+    if (2 + 2 == 4) {
+      var result = "Sane world."; }
+    else if (2 + 2 == 5) {
+      var result = "Very large values of 2."; }
+    else {
+      result = "Not sane world."; }
     end
 
 ####String and Int conversion
@@ -117,11 +116,11 @@ In Ruby:
     
 In JavaScript:
 
-    Number("5");
+    parseInt("5", 10);
     //becomes the number 5
+    //the 10 specifies base 10
     
-    var n = 5;
-    n.toString();
+    (5).toString();
     //becomes the string "5"
 
 ####Push value to an array
@@ -152,15 +151,15 @@ In JavaScript:
 
     //you must specifically check that it is undefined
     function add_n_or_1(x, n) {
-      n = typeof n != 'undefined' ? n : 1;
+      n = typeof n !== 'undefined' ? n : 1;
       return x + n;
     };
     
     //OR in some cases this works
     function add_n_or_1(x, n) {
-      if (arguments.length == 1)
+      if (arguments.length == 1) {
         n = 1;
-      return x + n;
+      return x + n; }
     };
 
 
@@ -190,7 +189,6 @@ In this book, I won't leave out any semicolons, and I strongly urge you to do th
     
 
 
-###Cool Stuff to Think About
+####Style Guide for JS
 
- * JavaScript has metaprogramming too!  Check out [the factory method in this example](http://eloquentjavascript.net/chapter3.html#p2eb13e2b).
- * JavaScript style conventions are listed in [this guide by Douglas Crockford](http://javascript.crockford.com/code.html).
+JavaScript style conventions are listed in [this guide by Douglas Crockford](http://javascript.crockford.com/code.html).
