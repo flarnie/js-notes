@@ -6,7 +6,7 @@ js-notes
 Here are some key differences between our beloved Ruby and it's best friend, JavaScript.
 
 \(Note: There are more similarities than differences!  For example, they deal with scope in very similar ways.  
-The 'Scope of variables' concept noted in this table is one of the only differences.\)
+The 'Scope of variables' concept noted in this table is one of the only differences in the way they deal with scope.\)
 
 | Concepts   | in Ruby  | in JavaScript |
 | ---------- | -------- | ------------- |
