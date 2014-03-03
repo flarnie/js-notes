@@ -38,7 +38,7 @@ In JavaScript:
 
     var word = "Hello World.";
     //(Yes I do put a ; at the end of every line)
-    word.slice(2,4)
+    word.slice(2,4);
     //returns "ll"
     
 ####Defining a 'block' of code
